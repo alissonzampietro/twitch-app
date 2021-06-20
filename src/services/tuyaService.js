@@ -33,6 +33,11 @@ class TuyaService {
 
   setColor(color) {
     let _this = this;
+    this.runCommand(24, color)
+  }
+
+  runCommand(action, command) {
+    let _this = this;
     this.device.on('data', data => {
       console.log('Data from device:', data);
     
@@ -40,7 +45,7 @@ class TuyaService {
     
       // Set default property to opposite
       if (!_this.stateHasChanged) {
-        _this.device.set({dps: 24, set: color});
+        _this.device.set({dps: action, set: command});
     
         // Otherwise we'll be stuck in an endless
         // loop of toggling the state.
@@ -60,6 +65,10 @@ class TuyaService {
 
   setBlue() {
     this.setColor('00dc03e803e8')
+  }
+
+  turnOff() {
+    this.runCommand(20, false);
   }
 }
 
