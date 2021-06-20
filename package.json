@@ -1,0 +1,23 @@
+{
+  "name": "tuya-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "install": "^0.13.0",
+    "npm": "^7.18.1",
+    "tuyapi": "github:codetheweb/tuyapi"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "typescript": "^4.3.4"
+  }
+}
